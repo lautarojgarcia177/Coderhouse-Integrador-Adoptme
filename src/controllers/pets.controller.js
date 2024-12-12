@@ -1,6 +1,6 @@
 import PetDTO from "../dto/Pet.dto.js";
 import { petsService } from "../services/index.js"
-import __dirname from "../utils/index.js";
+import __dirname from "../utils.js";
 
 const getAllPets = async(req,res)=>{
     const pets = await petsService.getAll();
@@ -37,7 +37,7 @@ const createPetWithImage = async(req,res) =>{
         name,
         specie,
         birthDate,
-        image:`${__dirname}/../public/img/${file.filename}`
+        image:`${__dirname}/public/img/${file.filename}`
     });
     console.log(pet);
     const result = await petsService.create(pet);
