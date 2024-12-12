@@ -22,7 +22,7 @@ app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
 
-app.get('/health-check', (req, res) => res.send('Ok! :D'))
+app.get('/health-check', (req, res) => res.send('Ok! :D Recuerda utilizar https :)'))
 
 app.use('/api/users', usersRouter);
 app.use('/api/pets', petsRouter);
